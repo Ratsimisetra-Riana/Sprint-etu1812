@@ -3,4 +3,4 @@
 3 - déplacez ou copiez ces fichiers dans ce dossier 
 4 - lancez script.sh
 5 - ouvrez un navigateur web
-5 - selectionnez Sprint dans le serveur Tomcat
+6 - selectionnez Sprint dans le serveur Tomcat
