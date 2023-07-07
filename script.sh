@@ -1,15 +1,19 @@
-javac -d ./ Mapping.java
-javac -d ./ Anno_test.java
-javac -d ./ Util.java
-javac -d ./ FrontServlet.java
+mkdir ./WEB-INF
+cd ./WEB-INF
+mkdir ./classes
+mkdir ./lib
 
-jar cvf sprint.jar annotations etu1812 utils
-mv ./sprint.jar ../lib
+cd ../
+cp ./Framework/sprint.jar ./WEB-INF/lib
+cp ./Framework/dom-2.3.0-jaxb-1.0.6.jar ./WEB-INF/lib
+cp ./Framework/gson-2.8.2.jar ./WEB-INF/lib
+cp ./Framework/servlet-api.jar ./WEB-INF/lib
+cp -R ./Test/test ./WEB-INF/classes
+cp ./Test/views/*.jsp ./ 
+cp ./web.xml ./WEB-INF
 
-javac -d ./ -cp ../lib/sprint.jar Test.java
+jar cvf Sprint.war ./*.jsp ./WEB-INF
+mv Sprint.war ../ 
 
-cd ../../
-
-jar cvf test_sprint.war WEB-INF
-
-mv test_sprint.war ../
+rm -R ./WEB-INF
+rm ./*.jsp
